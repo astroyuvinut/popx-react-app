@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 375px;
+  min-height: 100vh;
+  background-color: #f7f8f9;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 400px) {
+  #root {
+    height: 812px;
+    min-height: auto;
+    border-radius: 24px;
+    margin: 20px 0;
+    border: 8px solid #333;
+  }
+}
+
+.page-container {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8f9;
+}
+
+/* Typography */
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #1d2226;
+  margin-bottom: 12px;
+}
+
+p.subtitle {
+  font-size: 15px;
+  color: #6c6c6c;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto; 
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background-color: #6c25ff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #cebdf0;
+  color: #1d2226;
+  font-weight: 500;
+}
+
+.btn-disabled {
+  background-color: #cbcccb;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f7f8f9;
+  outline: none;
+  color: #1d2226;
+  font-family: 'Rubik', sans-serif;
+}
+
+.form-group input:focus {
+  border-color: #6c25ff;
+}
+
+.form-group label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background-color: #f7f8f9;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #6c25ff;
+  font-weight: 500;
+}
+
+.form-group label span {
+  color: red;
+}
+
+/* Radio buttons for agency */
+.radio-group {
+  margin-bottom: 32px;
+}
+
+.radio-group p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #1d2226;
+}
+
+.radio-group p span {
+  color: red;
+}
+
+.radio-options {
+  display: flex;
+  gap: 24px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #1d2226;
+}
+
+.radio-label input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a0a0a0;
+  border-radius: 50%;
+  margin: 0;
+  display: grid;
+  place-content: center;
+}
+
+.radio-label input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #6c25ff;
+}
+
+.radio-label input[type="radio"]:checked {
+  border-color: #6c25ff;
+}
+
+.radio-label input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+/* Profile page specific */
+.profile-page {
+  background-color: #f7f8f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  background-color: white;
+  padding: 24px 24px 16px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1d2226;
+}
+
+.profile-content {
+  padding: 24px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.avatar-container {
+  position: relative;
+  width: 76px;
+  height: 76px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.camera-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #6c25ff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+
+.user-details h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d2226;
+  margin-bottom: 4px;
+}
+
+.user-details p {
+  font-size: 14px;
+  color: #6c25ff;
+}
+
+.profile-desc {
+  font-size: 14px;
+  color: #1d2226;
+  line-height: 1.6;
+  padding-bottom: 32px;
+  border-bottom: 1px dashed #dcdcdc;
+}

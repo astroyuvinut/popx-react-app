@@ -3,5 +3,10 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "outputDirectory": "./dist",
-  "env": []
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
